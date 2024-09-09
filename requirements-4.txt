@@ -12,4 +12,3 @@ matplotlib-inline
 ipython
 matplotlib-venn
 xlsxwriter
-openpyxl
