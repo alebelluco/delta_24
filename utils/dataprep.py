@@ -160,11 +160,10 @@ def scarica_excel(df, filename):
 def crea_dizionario(df):
        no_mot = rimuovi_motore(df)
        df_test = piattaforme(no_mot)
-       valori = list(df_test.Articolo)
-       st.write(df_test)
-       st.stop()
-        
-       chiavi = list(df_test.first4)
+       df_test['first4'] = [articolo[:4] for articolo in df.Articolo]
+       df_car = df_test[['first4','Articolo']].groupby(by='first4',as_index=False).count() 
+       valori = list(df_car.Articolo)
+       chiavi = list(df_car.first4)
        dizionario = dict(zip(chiavi,valori))
        return dizionario
 
