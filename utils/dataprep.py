@@ -161,6 +161,9 @@ def crea_dizionario(df):
        no_mot = rimuovi_motore(df)
        df_test = piattaforme(no_mot)
        valori = list(df_test.Articolo)
+       st.write(df_test)
+       st.stop()
+        
        chiavi = list(df_test.first4)
        dizionario = dict(zip(chiavi,valori))
        return dizionario
