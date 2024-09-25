@@ -157,7 +157,13 @@ def scarica_excel(df, filename):
         file_name=filename,
         mime="application/vnd.ms-excel"
     )
-
+def crea_dizionario(df):
+       no_mot = rimuovi_motore(df)
+       df_test = piattaforme(no_mot)
+       valori = list(df_test.Articolo)
+       chiavi = list(df_test.first4)
+       dizionario = dict(zip(chiavi,valori))
+       return dizionario
 
 '''
 
